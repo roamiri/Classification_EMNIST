@@ -17,7 +17,7 @@
 # Specify number of requested nodes.
 #SBATCH -N 1
 # Specify the total number of requested procs:
-#SBATCH -n 8
+#SBATCH -n 16
 # Number of GPUs per node.
 #SBATCH --gres=gpu:1
 # load all necessary modules.
