@@ -15,7 +15,7 @@ import network2_EMNIST
 nh = [30, 50]
 minibatch_size = [10, 30]
 eta = [0.5, 0.8]
-epochs = [2, 3]
+epochs = [30, 40]
 lmbda = [50.0, 80.0]
 
 
