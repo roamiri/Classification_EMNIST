@@ -8,13 +8,14 @@ Created on Tue Oct  9 15:56:49 2018
 import random
 import itertools
 import EMNIST_Loader
+import pickle
 training_data, validation_data, test_data = EMNIST_Loader.load_data_wrapper()
 import network2_EMNIST
 
 nh = [30, 50]
 minibatch_size = [10, 30]
 eta = [0.5, 0.8]
-epochs = [30, 40]
+epochs = [2, 3]
 lmbda = [50.0, 80.0]
 
 
@@ -40,10 +41,10 @@ for i in range(32):
     net.default_weight_initializer()
     
     evaluation_cost, evaluation_accuracy, training_cost, training_accuracy = net.SGD(training_data, config[3], config[1], config[2], config[4], evaluation_data=validation_data, 
-            monitor_evaluation_cost=True,
-            monitor_evaluation_accuracy=True,
-            monitor_training_cost=True,
-            monitor_training_accuracy=True)
+            monitor_evaluation_cost=False,
+            monitor_evaluation_accuracy=False,
+            monitor_training_cost=False,
+            monitor_training_accuracy=False)
     
     net.save(str(savedir+'/net_value_{}').format(i))
     
