@@ -7,7 +7,7 @@ import pickle
 nh = 30
 minibatch_size = 10
 eta = 0.5
-epochs = 30
+epochs = 2
 lmbda = 50.0
 
 config = [nh,minibatch_size,eta,epochs,lmbda]
@@ -29,6 +29,7 @@ evaluation_cost, evaluation_accuracy, training_cost, training_accuracy = net.SGD
         monitor_training_cost=True,
         monitor_training_accuracy=True)
 
+net.save('net_value')
 
 f = open('test.pkl', 'wb')
 pickle.dump(config,f)
@@ -38,3 +39,9 @@ pickle.dump(training_cost, f)
 pickle.dump(training_accuracy, f)
 f.close()
 
+f= open( "test.pkl", "rb" ) 
+a1 = pickle.load(f)
+a2 = pickle.load(f)
+a3 = pickle.load(f)
+a4 = pickle.load(f)
+a5 = pickle.load(f)
