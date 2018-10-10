@@ -41,10 +41,10 @@ for i in range(32):
     net.default_weight_initializer()
     
     evaluation_cost, evaluation_accuracy, training_cost, training_accuracy = net.SGD(training_data, config[3], config[1], config[2], config[4], evaluation_data=validation_data, 
-            monitor_evaluation_cost=False,
-            monitor_evaluation_accuracy=False,
-            monitor_training_cost=False,
-            monitor_training_accuracy=False)
+            monitor_evaluation_cost=True,
+            monitor_evaluation_accuracy=True,
+            monitor_training_cost=True,
+            monitor_training_accuracy=True)
     
     net.save(str(savedir+'/net_value_{}').format(i))
     
