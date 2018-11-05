@@ -4,7 +4,7 @@ Created on Tue Oct  9 15:56:49 2018
 
 @author: roohollah
 """
-
+import sys
 import random
 import itertools
 import EMNIST_Loader
@@ -40,8 +40,10 @@ for i in range(32):
     net = network2_EMNIST.Network([784, config[0], 47], cost=network2_EMNIST.CrossEntropyCost) 
     net.default_weight_initializer()
     
+#    print(training_data[0][1].shape)
+#    sys.exit()
     evaluation_cost, evaluation_accuracy, training_cost, training_accuracy = net.SGD(training_data, config[3], config[1], config[2], config[4], evaluation_data=validation_data, 
-            monitor_evaluation_cost=True,
+            monitor_evaluation_cost=True, #eeeee
             monitor_evaluation_accuracy=True,
             monitor_training_cost=True,
             monitor_training_accuracy=True)

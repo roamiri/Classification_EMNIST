@@ -36,7 +36,6 @@ for i in range(32):
 #    config_file = open(str(savedir+'/run_{}.pkl').format(i))
 #    config = pickle.load(config_file)
     x.add_row([config[0],config[1],config[2],config[3],config[4], accuarcy])
-    config_file.close()
+#    config_file.close()
 
-print x
     
